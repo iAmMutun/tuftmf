@@ -109,7 +109,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="fix_file.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="scan_dir.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="chars.h" />
