@@ -1,18 +1,13 @@
 #include <locale>
 
-class codecvt_utf16le: public std::codecvt<wchar_t,char,std::char_traits<wchar_t>::state_type>
+class rsc_utf8: public std::codecvt_utf8<wchar_t, 0x10ffff, std::consume_header>
+{ };
+
+class rsc_utf16: public std::codecvt<wchar_t,char,std::char_traits<wchar_t>::state_type>
 {
   typedef std::codecvt<wchar_t,char,std::char_traits<wchar_t>::state_type> MyType;
   typedef MyType::state_type          state_type;
   typedef MyType::result              result;
-
-  int do_length (state_type& state,
-              const extern_type* from,
-              const extern_type* from_end,
-              size_t max) const
-  {
-    return MyType::do_length(state, from, from_end, max) + 1;
-  }
   virtual result do_out(state_type &state,
               const wchar_t *from,
               const wchar_t *from_end,

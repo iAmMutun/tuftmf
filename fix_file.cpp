@@ -4,7 +4,7 @@
 #include <codecvt>
 #include "chars.h"
 #include "functions.hpp"
-#include "utf16le.hpp"
+#include "utf.hpp"
 
 void fix_file(const std::wstring& in, const std::wstring& out)
 {
@@ -12,8 +12,8 @@ void fix_file(const std::wstring& in, const std::wstring& out)
   std::wifstream fsin(in, std::ios::binary);
   std::wofstream fsout(out, std::ios::binary);
 
-  auto *utf8 = new std::codecvt_utf8<wchar_t, 0x10ffff, std::consume_header>;
-  auto *ucs2 = new codecvt_utf16le;
+  auto *utf8 = new rsc_utf8;
+  auto *ucs2 = new rsc_utf16;
   fsin.imbue(std::locale(fsin.getloc(), utf8));
   fsout.imbue(std::locale(fsin.getloc(), ucs2));
  
