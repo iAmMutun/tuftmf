@@ -2,110 +2,110 @@
 
 static const wchar_t _floating_vowels[] =
 {
-  0x0E31, // —
-  0x0E34, // ‘
-  0x0E35, // ’
-  0x0E36, // ÷
-  0x0E37, // ◊
-  0x0E47, // Á
+  L'\x0E31', // ‡∏±
+  L'\x0E34', // ‡∏¥
+  L'\x0E35', // ‡∏µ
+  L'\x0E36', // ‡∏∂
+  L'\x0E37', // ‡∏∑
+  L'\x0E47', // ‡πá
 };
 
 static const wchar_t _floating_vowels_left[] =
 {
-  0xF710, // —
-  0xF701, // ‘
-  0xF702, // ’
-  0xF703, // ÷
-  0xF704, // ◊
-  0xF712, // Á
+  L'\xF710', // ‡∏±
+  L'\xF701', // ‡∏¥
+  L'\xF702', // ‡∏µ
+  L'\xF703', // ‡∏∂
+  L'\xF704', // ‡∏∑
+  L'\xF712', // ‡πá
 };
 
 static const wchar_t _backward_floating_vowels[] =
 {
-  0x0E33, // ”
+  L'\x0E33', // ‡∏≥
 };
 
 static const wchar_t _sub_vowels[] =
 {
-  0x0E38, // ÿ
-  0x0E39, // Ÿ
-  0x0E3A, // ⁄
+  L'\x0E38', // ‡∏∏
+  L'\x0E39', // ‡∏π
+  L'\x0E3A', // ‡∏∫
 };
 
 static const wchar_t _long_tail[] =
 {
-  0x0E1B, // ª
-  0x0E1D, // Ω
-  0x0E1F, // ø
-  0x0E2C, // Ã
+  L'\x0E1B', // ‡∏õ
+  L'\x0E1D', // ‡∏ù
+  L'\x0E1F', // ‡∏ü
+  L'\x0E2C', // ‡∏¨
 };
 
 static const wchar_t _tone_marker_high[] =
 {
-  0x0E48, // '
-  0x0E49, // È
-  0x0E4A, // Í
-  0x0E4B, // Î
-  0x0E4C, // Ï
+  L'\x0E48', // '
+  L'\x0E49', // ‡πâ
+  L'\x0E4A', // ‡πä
+  L'\x0E4B', // ‡πã
+  L'\x0E4C', // ‡πå
 };
 
 static const wchar_t _tone_marker_left_low[] =
 {
-  0xF705, // '
-  0xF706, // È
-  0xF707, // Í
-  0xF708, // Î
-  0xF709, // Ï
+  L'\xF705', // '
+  L'\xF706', // ‡πâ
+  L'\xF707', // ‡πä
+  L'\xF708', // ‡πã
+  L'\xF709', // ‡πå
 };
 
 static const wchar_t _tone_marker_low[] =
 {
-  0xF70A, // '
-  0xF70B, // È
-  0xF70C, // Í
-  0xF70D, // Î
-  0xF70E, // Ï
+  L'\xF70A', // '
+  L'\xF70B', // ‡πâ
+  L'\xF70C', // ‡πä
+  L'\xF70D', // ‡πã
+  L'\xF70E', // ‡πå
 };
 
 static const wchar_t _tone_marker_left_high[] =
 {
-  0xF713, // '
-  0xF714, // È
-  0xF715, // Í
-  0xF716, // Î
-  0xF717, // Ï
+  L'\xF713', // '
+  L'\xF714', // ‡πâ
+  L'\xF715', // ‡πä
+  L'\xF716', // ‡πã
+  L'\xF717', // ‡πå
 };
 
 static const wchar_t _lower_foot[] = 
 {
-  0x0E0D, // ≠
-  0x0E10, // ∞
+  L'\x0E0D', // ‡∏ç
+  L'\x0E10', // ‡∏ê
 };
 
 static const wchar_t _lower_foot_stripped[] = 
 {
-  0xF70F, // ≠
-  0xF700, // ∞
+  L'\xF70F', // ‡∏ç
+  L'\xF700', // ‡∏ê
 };
 
 static const wchar_t _lower_vowels[] = 
 {
-  0x0E38, // ÿ
-  0x0E39, // Ÿ
-  0x0E3A, // ⁄
+  L'\x0E38', // ‡∏∏
+  L'\x0E39', // ‡∏π
+  L'\x0E3A', // ‡∏∫
 };
 
 static const wchar_t _lower_vowels_left[] = 
 {
-  0xF718, // ÿ
-  0xF719, // Ÿ
-  0xF71A, // ⁄
+  L'\xF718', // ‡∏∏
+  L'\xF719', // ‡∏π
+  L'\xF71A', // ‡∏∫
 };
 
 static const wchar_t _lower_tail[] = 
 {
-  0x0E0E, // Æ
-  0x0E0F, // Ø
-  0x0E24, // ƒ
-  0x0E26, // ∆
+  L'\x0E0E', // ‡∏é
+  L'\x0E0F', // ‡∏è
+  L'\x0E24', // ‡∏§
+  L'\x0E26', // ‡∏¶
 };

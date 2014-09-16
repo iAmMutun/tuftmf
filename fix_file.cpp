@@ -1,7 +1,6 @@
-#include <fstream>
 #include <iostream>
+#include <fstream>
 #include <locale>
-#include <codecvt>
 #include "chars.h"
 #include "functions.hpp"
 #include "utf.hpp"
@@ -9,17 +8,16 @@
 void fix_file(const std::wstring& in, const std::wstring& out)
 {
   std::wcout << L"in:" << in << L"\nout:" << out << L'\n';
-  std::wifstream fsin(in, std::ios::binary);
+  std::wifstream fsin (in , std::ios::binary);
   std::wofstream fsout(out, std::ios::binary);
-
-  auto *utf8 = new rsc_utf8;
-  auto *ucs2 = new rsc_utf16;
-  fsin.imbue(std::locale(fsin.getloc(), utf8));
+  rsc_utf8  *utf8 = new rsc_utf8;
+  rsc_utf16 *ucs2 = new rsc_utf16;
+  fsin.imbue (std::locale(fsin.getloc(), utf8));
   fsout.imbue(std::locale(fsin.getloc(), ucs2));
- 
+
   int count = 0;
   wchar_t before, current, after;
-  before = 0;
+  before = L'\0';
   fsin.get(current);
   while (!fsin.eof())
   {

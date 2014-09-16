@@ -1,13 +1,16 @@
+#pragma once
 #include <locale>
+#include <codecvt>
 
-class rsc_utf8: public std::codecvt_utf8<wchar_t, 0x10ffff, std::consume_header>
+class rsc_utf8 : public std::codecvt_utf8<wchar_t, 0x10ffff, std::consume_header>
 { };
 
-class rsc_utf16: public std::codecvt<wchar_t,char,std::char_traits<wchar_t>::state_type>
+class rsc_utf16 : public std::codecvt<wchar_t, char, std::char_traits<wchar_t>::state_type>
 {
-  typedef std::codecvt<wchar_t,char,std::char_traits<wchar_t>::state_type> MyType;
-  typedef MyType::state_type          state_type;
-  typedef MyType::result              result;
+  typedef std::codecvt<wchar_t, char, std::char_traits<wchar_t>::state_type> _Tbase;
+  typedef _Tbase::state_type    state_type;
+  typedef _Tbase::result        result;
+
   virtual result do_out(state_type &state,
               const wchar_t *from,
               const wchar_t *from_end,
@@ -16,9 +19,9 @@ class rsc_utf16: public std::codecvt<wchar_t,char,std::char_traits<wchar_t>::sta
               char *to_limit,
               char* &to_next) const
   {
-    if (state == 0) {
-      to[0] = 0xffU;
-      to[1] = 0xfeU;
+    if ((state == 0) && (to + 2 <= to_limit)) {
+      to[0] = '\xFF';
+      to[1] = '\xFE';
       state = 1;
       to += 2;
     }
