@@ -2,18 +2,15 @@
 #include <iostream>
 #include <locale>
 #include <windows.h>
+#include "slash.hpp"
 
 void fix_file(const std::wstring& in, const std::wstring& out);
 
-void scan_dir(const std::wstring& a, const std::wstring& b)
+void scan_dir(const std::wstring& in_dir, const std::wstring& out_dir)
 {
-  CreateDirectoryW(b.c_str(), NULL);
-  std::wstring in = a;
-  std::wstring out = b;
-  if (in.back() != L'\\')
-    in += L'\\';  
-  if (out.back() != L'\\')
-    out += L'\\';
+  std::wstring in  = slash(in_dir);
+  std::wstring out = slash(out_dir);
+  CreateDirectoryW(out_dir.c_str(), NULL);
   
   std::wcout << L"dir:" << in << L'\n';
   std::wstring filter = in + L'*';
