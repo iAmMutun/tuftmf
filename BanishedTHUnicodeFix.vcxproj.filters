@@ -32,10 +32,10 @@
     <ClInclude Include="functions.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="utf.hpp">
+    <ClInclude Include="slash.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="slash.hpp">
+    <ClInclude Include="rsc.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

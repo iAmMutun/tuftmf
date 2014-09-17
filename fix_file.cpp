@@ -1,23 +1,18 @@
 #include <iostream>
-#include <fstream>
 #include <locale>
 #include "chars.h"
 #include "functions.hpp"
-#include "utf.hpp"
+#include "rsc.hpp"
 
 void fix_file(const std::wstring& in, const std::wstring& out)
 {
   std::wcout << L"in:" << in << L"\nout:" << out << L'\n';
-  std::wifstream fsin (in , std::ios::binary);
-  std::wofstream fsout(out, std::ios::binary);
-  rsc_utf8  *utf8 = new rsc_utf8;
-  rsc_utf16 *ucs2 = new rsc_utf16;
-  fsin.imbue (std::locale(fsin.getloc(), utf8));
-  fsout.imbue(std::locale(fsin.getloc(), ucs2));
+  rsc::istream fsin (in);
+  rsc::ostream fsout(out);
 
   int count = 0;
-  wchar_t before, current, after;
-  before = L'\0';
+  char16_t before = L'\0';
+  char16_t current, after;
   fsin.get(current);
   while (!fsin.eof())
   {
@@ -67,9 +62,9 @@ void fix_file(const std::wstring& in, const std::wstring& out)
     fsout.put(current);
     before = current;
     current = after;
-  };
+  } // while
 
-  if (count)
+  if (count > 0)
     std::wcout << L'\n';
   std::wcout << L"fixed:" << count << L'\n';
 }
