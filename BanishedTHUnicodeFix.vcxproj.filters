@@ -24,12 +24,15 @@
     <ClCompile Include="scan_dir.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClInclude Include="functions.cpp">
+      <Filter>Source Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="chars.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="functions.hpp">
+    <ClInclude Include="functions.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="slash.hpp">

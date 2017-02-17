@@ -1,7 +1,7 @@
 #include <iostream>
 #include <locale>
 #include "chars.h"
-#include "functions.hpp"
+#include "functions.h"
 #include "rsc.hpp"
 
 void fix_file(const std::wstring& in, const std::wstring& out)

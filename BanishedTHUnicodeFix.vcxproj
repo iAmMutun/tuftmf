@@ -116,10 +116,11 @@
     <ClCompile Include="fix_file.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="scan_dir.cpp" />
+    <ClCompile Include="functions.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="chars.h" />
-    <ClInclude Include="functions.hpp" />
+    <ClInclude Include="functions.h" />
     <ClInclude Include="slash.hpp" />
     <ClInclude Include="rsc.hpp" />
   </ItemGroup>
