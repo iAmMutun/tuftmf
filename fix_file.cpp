@@ -11,13 +11,34 @@ void fix_file(const std::wstring& in, const std::wstring& out)
   rsc::ostream fsout(out);
 
   int count = 0;
+  bool quote = false;
   char16_t before = L'\0';
   char16_t current, after;
   fsin.get(current);
   while (!fsin.eof())
   {
     fsin.get(after);
-    if (is_floating_vowel(current))
+    
+    if (current == L'\"')
+      quote = !quote;
+
+    if (!quote)
+    {
+      // not in quote, do nothing
+    }
+    else if (current == L'@' && before != L'@')
+    {
+      // zero-width space
+      fsout.put(L'\x200B');
+    }
+    else if (is_floating_vowel(current))
+    {
+      if (is_long_tail(before)) {
+        count++;
+        current = fix_floating_vowel(current, _floating_vowels_left);
+      }
+    }
+    else if (is_floating_vowel(current))
     {
       if (is_long_tail(before)) {
         count++;
