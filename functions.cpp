@@ -8,6 +8,16 @@
     if (A[i] == c) \
       return true;
 
+bool is_double_quote(wchar_t c)
+{
+  return c == _double_quote;
+}
+
+bool is_argument(wchar_t c)
+{
+  return c == _at_sign;
+}
+
 bool is_floating_vowel (wchar_t c)
 {
   check_loop(_floating_vowels);
@@ -57,6 +67,12 @@ bool is_lower_tail (wchar_t c)
 {
   check_loop(_lower_tail);
   return false;
+}
+
+wchar_t argument_prefix ()
+{
+  std::wcout << L'@' ;//<< std::showbase << std::hex << _zero_width_space;
+  return _zero_width_space;
 }
 
 void log_fix (wchar_t a, wchar_t b)

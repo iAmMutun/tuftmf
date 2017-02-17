@@ -18,17 +18,17 @@ void fix_file(const std::wstring& in, const std::wstring& out)
   {
     fsin.get(after);
     
-    if (current == L'\"')
+    if (is_double_quote(current))
       quote = !quote;
 
     if (!quote)
     {
       // not in quote, do nothing
     }
-    else if (current == L'@' && before != L'@')
+    else if (is_argument(current))
     {
-      // zero-width space
-      fsout.put(L'\x200B');
+      count++;
+      fsout.put(argument_prefix());
     }
     else if (is_floating_vowel(current))
     {
@@ -86,5 +86,5 @@ void fix_file(const std::wstring& in, const std::wstring& out)
 
   if (count > 0)
     std::wcout << L'\n';
-  std::wcout << L"fixed:" << count << L'\n';
+  std::wcout << L"fixed:" << count << std::endl;
 }

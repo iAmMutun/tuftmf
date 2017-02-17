@@ -1,5 +1,11 @@
 #pragma once
 
+static const wchar_t _double_quote = L'\"';
+
+static const wchar_t _at_sign = L'@';
+
+static const wchar_t _zero_width_space = L'\x200B';
+
 static const wchar_t _floating_vowels[] =
 {
   L'\x0E31', // ั

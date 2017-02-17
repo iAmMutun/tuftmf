@@ -1,5 +1,9 @@
 #pragma once
 
+bool is_double_quote(wchar_t c);
+
+bool is_argument(wchar_t c);
+
 bool is_floating_vowel (wchar_t c);
 
 bool is_backward_floating_vowel (wchar_t c);
@@ -13,6 +17,8 @@ bool is_lower_foot (wchar_t c);
 bool is_lower_vowel (wchar_t c);
 
 bool is_lower_tail (wchar_t c);
+
+wchar_t argument_prefix ();
 
 wchar_t move_floating_left (wchar_t c);
 
