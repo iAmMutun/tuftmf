@@ -107,3 +107,33 @@ wchar_t fix_lower_vowel (wchar_t c, const wchar_t *fix)
   }
   return c;
 }
+
+wchar_t move_floating_left (wchar_t c)
+{
+  return fix_floating_vowel(c, _floating_vowels_left);
+}
+
+wchar_t move_tone_marker_low (wchar_t c)
+{
+  return fix_tone_marker(c, _tone_marker_low);
+}
+
+wchar_t move_tone_marker_left_height (wchar_t c)
+{
+  return fix_tone_marker(c, _tone_marker_left_high);
+}
+
+wchar_t move_tone_marker_left_low (wchar_t c)
+{
+  return fix_tone_marker(c, _tone_marker_left_low);
+}
+
+wchar_t strip_lower_foot (wchar_t c)
+{
+  return fix_lower_foot(c, _lower_foot_stripped);
+}
+
+wchar_t move_lower_vowel_left (wchar_t c)
+{
+  return fix_lower_vowel(c, _lower_vowels_left);
+}
