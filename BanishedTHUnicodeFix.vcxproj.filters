@@ -24,9 +24,9 @@
     <ClCompile Include="scan_dir.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClInclude Include="functions.cpp">
+    <ClCompile Include="functions.cpp">
       <Filter>Source Files</Filter>
-    </ClInclude>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="chars.h">
