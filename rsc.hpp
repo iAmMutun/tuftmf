@@ -60,7 +60,7 @@ protected:
   typedef std::basic_ofstream<_Tchar, _Traits> _Tbase;
 public:
   ostream (const std::wstring &file) : _Tbase(file, std::ios::binary) {
-    cvt_utf16 *cvt = new cvt_utf16;
+    cvt_utf8 *cvt = new cvt_utf8;
     imbue(std::locale(getloc(), cvt));
   };
 }; // class ostream
