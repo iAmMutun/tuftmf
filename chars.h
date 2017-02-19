@@ -6,6 +6,11 @@ static const wchar_t _at_sign = L'@';
 
 static const wchar_t _zero_width_space = L'\x200B';
 
+static const wchar_t _digits[] =
+{
+    L'0', L'1', L'2', L'3', L'4', L'5', L'6', L'7', L'8', L'9'
+};
+
 static const wchar_t _floating_vowels[] =
 {
     L'\x0E31', // ั

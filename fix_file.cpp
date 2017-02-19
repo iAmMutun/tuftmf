@@ -25,11 +25,6 @@ void fix_file (const std::wstring& in, const std::wstring& out)
         {
             // not in quote, do nothing
         }
-        else if (is_argument(current))
-        {
-            count++;
-            fsout.put(argument_prefix());
-        }
         else if (is_floating_vowel(current))
         {
             if (is_long_tail(before))
@@ -93,6 +88,19 @@ void fix_file (const std::wstring& in, const std::wstring& out)
         }
 
         fsout.put(current);
+
+        if (!quote)
+        {
+        }
+        else if (is_digit(current))
+        {
+            if (is_argument(before) && is_argument(after))
+            {
+                count++;
+                fsout.put(argument_prefix());
+            }
+        }
+
         before = current;
         current = after;
     } // while

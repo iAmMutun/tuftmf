@@ -18,6 +18,12 @@ bool is_argument (wchar_t c)
     return c == _at_sign;
 }
 
+bool is_digit (wchar_t c)
+{
+    check_loop(_digits);
+    return false;
+}
+
 bool is_floating_vowel (wchar_t c)
 {
     check_loop(_floating_vowels);
