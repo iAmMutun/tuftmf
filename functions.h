@@ -1,8 +1,8 @@
 #pragma once
 
-bool is_double_quote(wchar_t c);
+bool is_double_quote (wchar_t c);
 
-bool is_argument(wchar_t c);
+bool is_argument (wchar_t c);
 
 bool is_floating_vowel (wchar_t c);
 
