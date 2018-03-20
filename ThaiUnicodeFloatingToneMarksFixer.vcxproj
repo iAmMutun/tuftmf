@@ -125,7 +125,7 @@
     <ClInclude Include="chars.h" />
     <ClInclude Include="functions.h" />
     <ClInclude Include="slash.hpp" />
-    <ClInclude Include="rsc.hpp" />
+    <ClInclude Include="stream.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

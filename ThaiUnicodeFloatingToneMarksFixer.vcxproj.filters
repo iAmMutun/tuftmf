@@ -38,7 +38,7 @@
     <ClInclude Include="slash.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="rsc.hpp">
+    <ClInclude Include="stream.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
