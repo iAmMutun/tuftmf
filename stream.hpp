@@ -3,7 +3,7 @@
 #include <locale>
 #include <codecvt>
 
-namespace rsc
+namespace tuftmf
 {
 
 typedef char16_t _Tchar;
@@ -37,4 +37,4 @@ public:
     };
 }; // class ostream
 
-} // namespace rsc
+} // namespace tuftmf

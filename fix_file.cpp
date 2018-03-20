@@ -6,8 +6,8 @@
 void fix_file (const std::wstring& in, const std::wstring& out)
 {
     std::wcout << L"in:" << in << L"\nout:" << out << L'\n';
-    rsc::istream fsin(in);
-    rsc::ostream fsout(out);
+    tuftmf::istream fsin(in);
+    tuftmf::ostream fsout(out);
 
     int count = 0;
     bool quote = false;
