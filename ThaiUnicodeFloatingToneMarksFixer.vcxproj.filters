@@ -21,9 +21,6 @@
     <ClCompile Include="fix_file.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="scan_dir.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="functions.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -33,9 +30,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="functions.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="slash.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="stream.hpp">

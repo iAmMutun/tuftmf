@@ -124,13 +124,11 @@
   <ItemGroup>
     <ClCompile Include="fix_file.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="scan_dir.cpp" />
     <ClCompile Include="functions.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="chars.h" />
     <ClInclude Include="functions.h" />
-    <ClInclude Include="slash.hpp" />
     <ClInclude Include="stream.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

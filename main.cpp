@@ -1,8 +1,6 @@
-#include <fstream>
 #include <iostream>
-#include <locale>
 
-void scan_dir (const std::wstring& in, const std::wstring& out);
+void fix_file(const std::wstring& in, const std::wstring& out);
 
 int wmain (int argc, wchar_t** argv)
 {
@@ -14,19 +12,45 @@ int wmain (int argc, wchar_t** argv)
         std::wcerr << L"Must have atleast 1 argument";
         return -1;
     }
-    else if (argc == 1)
+
+    std::wstring in = argv[0];
+    std::wstring out;
+
+    if (argc == 1)
     {
-        std::wstring in = argv[0];
-        scan_dir(in, L".");
+        std::wcout << L"Overwrite input file? <y/n> : ";
+        wchar_t prompt;
+        std::wcin >> prompt;
+        switch (prompt)
+        {
+        case L'N':
+        case L'n':
+        case L'F':
+        case L'f':
+        case L'0':
+            std::wcout << L"Canceled";
+            return 0;
+        }
+
+        wchar_t tmp[L_tmpnam_s];
+        _wtmpnam_s(tmp);
+        out = tmp;
+
+        fix_file(in, out);
+
+        _wrename(out.c_str(), in.c_str());
+    }
+    else if (argc == 2)
+    {
+        out = argv[1];
+        fix_file(in, out);
     }
     else
     {
-        std::wstring out = argv[argc - 1];
-        for (int i = 0; i < argc - 1; i++)
-        {
-            std::wstring in = argv[i];
-            scan_dir(in, out);
-        }
+        std::wcerr << L"Too many arguments";
+        return -1;
     }
+
+
     return 0;
 }
