@@ -10,7 +10,6 @@ void fix_file (const std::wstring& in, const std::wstring& out)
     tuftmf::ostream fsout(out);
 
     int count = 0;
-    bool quote = false;
     char16_t before = L'\0';
     char16_t current, after;
     fsin.get(current);
@@ -18,14 +17,7 @@ void fix_file (const std::wstring& in, const std::wstring& out)
     {
         fsin.get(after);
 
-        if (is_double_quote(current))
-            quote = !quote;
-
-        if (!quote)
-        {
-            // not in quote, do nothing
-        }
-        else if (is_floating_vowel(current))
+        if (is_floating_vowel(current))
         {
             if (is_long_tail(before))
             {
@@ -89,10 +81,7 @@ void fix_file (const std::wstring& in, const std::wstring& out)
 
         fsout.put(current);
 
-        if (!quote)
-        {
-        }
-        else if (is_digit(current))
+        if (is_digit(current))
         {
             if (is_argument(before) && is_argument(after))
             {
