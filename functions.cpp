@@ -1,5 +1,4 @@
 #include "functions.h"
-#include <iostream>
 #include "chars.h"
 
 #define array_size(A) (sizeof(A)/sizeof(A[0]))
@@ -78,16 +77,10 @@ bool is_lower_tail (uint16_t c)
     return false;
 }
 
-void log_fix (uint16_t a, uint16_t b)
-{
-    std::wcout << L'!';//<< std::showbase << std::hex << a << '>' << b;
-}
-
 uint16_t fix_floating_vowel (uint16_t c, const uint16_t *fix)
 {
     for (size_t i = 0; i < array_size(_floating_vowels); i++) {
         if (_floating_vowels[i] == c) {
-            log_fix(c, fix[i]);
             return fix[i];
         }
     }
@@ -98,7 +91,6 @@ uint16_t fix_tone_marker (uint16_t c, const uint16_t *fix)
 {
     for (size_t i = 0; i < array_size(_tone_marker_high); i++) {
         if (_tone_marker_high[i] == c) {
-            log_fix(c, fix[i]);
             return fix[i];
         }
     }
@@ -109,7 +101,6 @@ uint16_t fix_lower_foot (uint16_t c, const uint16_t *fix)
 {
     for (size_t i = 0; i < array_size(_lower_foot); i++) {
         if (_lower_foot[i] == c) {
-            log_fix(c, fix[i]);
             return fix[i];
         }
     }
@@ -120,7 +111,6 @@ uint16_t fix_lower_vowel (uint16_t c, const uint16_t *fix)
 {
     for (size_t i = 0; i < array_size(_lower_vowels); i++) {
         if (_lower_vowels[i] == c) {
-            log_fix(c, fix[i]);
             return fix[i];
         }
     }

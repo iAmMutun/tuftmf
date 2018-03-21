@@ -1,4 +1,3 @@
-#include <iostream>
 #include "functions.h"
 #include "stream.hpp"
 #include "fix.h"
@@ -77,7 +76,6 @@ void fix_file (const std::wstring& in, const std::wstring& out)
     tuftmf::istream fsin(in);
     tuftmf::ostream fsout(out);
 
-    int count = 0;
     uint16_t before = L'\0';
     uint16_t current, after;
     fsin.get(current);
@@ -91,7 +89,6 @@ void fix_file (const std::wstring& in, const std::wstring& out)
         if (new_current != current)
         {
             current = new_current;
-            count++;
             _fix_counter(current, new_current);
         }
 
@@ -100,10 +97,6 @@ void fix_file (const std::wstring& in, const std::wstring& out)
         before = current;
         current = after;
     } // while
-
-    if (count > 0)
-        std::wcout << L'\n';
-    std::wcout << L"fixed:" << count << std::endl;
 }
 
 } // namespace tuftmf

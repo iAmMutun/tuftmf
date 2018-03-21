@@ -12,6 +12,14 @@ int wmain (int argc, wchar_t** argv)
         return -1;
     }
 
+    int count = 0;
+    tuftmf::set_fix_counter(
+        [&count] (uint16_t a, uint16_t b)
+    {
+        count++;
+        std::wcout << L'!';//<< std::showbase << std::hex << a << '>' << b;
+    });
+
     std::wstring in = argv[0];
     std::wstring out;
 
@@ -53,6 +61,10 @@ int wmain (int argc, wchar_t** argv)
         return -1;
     }
 
+
+    if (count > 0)
+        std::wcout << L'\n';
+    std::wcout << L"fixed:" << count << std::endl;
 
     return 0;
 }
