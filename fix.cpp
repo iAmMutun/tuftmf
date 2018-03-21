@@ -8,69 +8,69 @@ namespace tuftmf
 
 uint16_t fix(uint16_t before, uint16_t current, uint16_t after)
 {
-        int count = 0;
-        if (is_floating_vowel(current))
+    int count = 0;
+    if (is_floating_vowel(current))
+    {
+        if (is_long_tail(before))
+        {
+            count++;
+            current = move_floating_left(current);
+        }
+    }
+    else if (is_floating_vowel(current))
+    {
+        if (is_long_tail(before))
+        {
+            count++;
+            current = move_floating_left(current);
+        }
+    }
+    else if (is_tone_marker(current))
+    {
+        if (is_floating_vowel(before))
         {
             if (is_long_tail(before))
             {
                 count++;
-                current = move_floating_left(current);
+                current = move_tone_marker_left_height(current);
             }
         }
-        else if (is_floating_vowel(current))
+        else if (is_long_tail(before))
         {
-            if (is_long_tail(before))
+            if (is_backward_floating_vowel(after))
             {
                 count++;
-                current = move_floating_left(current);
+                current = move_tone_marker_left_height(current);
             }
-        }
-        else if (is_tone_marker(current))
-        {
-            if (is_floating_vowel(before))
-            {
-                if (is_long_tail(before))
-                {
-                    count++;
-                    current = move_tone_marker_left_height(current);
-                }
-            }
-            else if (is_long_tail(before))
-            {
-                if (is_backward_floating_vowel(after))
-                {
-                    count++;
-                    current = move_tone_marker_left_height(current);
-                }
-                else
-                {
-                    count++;
-                    current = move_tone_marker_left_low(current);
-                }
-            }
-            else if (!is_backward_floating_vowel(after))
+            else
             {
                 count++;
-                current = move_tone_marker_low(current);
+                current = move_tone_marker_left_low(current);
             }
         }
-        else if (is_lower_foot(current))
+        else if (!is_backward_floating_vowel(after))
         {
-            if (is_lower_vowel(after))
-            {
-                count++;
-                current = strip_lower_foot(current);
-            }
+            count++;
+            current = move_tone_marker_low(current);
         }
-        else if (is_lower_vowel(current))
+    }
+    else if (is_lower_foot(current))
+    {
+        if (is_lower_vowel(after))
         {
-            if (is_lower_tail(before))
-            {
-                count++;
-                current = move_lower_vowel_left(current);
-            }
+            count++;
+            current = strip_lower_foot(current);
         }
-        return current;
+    }
+    else if (is_lower_vowel(current))
+    {
+        if (is_lower_tail(before))
+        {
+            count++;
+            current = move_lower_vowel_left(current);
+        }
+    }
+    return current;
 }
 
 void fix_file (const std::wstring& in, const std::wstring& out)
