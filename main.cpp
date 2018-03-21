@@ -13,15 +13,16 @@ int wmain (int argc, wchar_t** argv)
     }
 
     int count = 0;
-    tuftmf::set_fix_counter(
-        [&count] (uint16_t a, uint16_t b)
-    {
+    tuftmf::set_fix_counter
+    ([&count] (uint16_t a, uint16_t b) {
         count++;
         std::wcout << L'!';//<< std::showbase << std::hex << a << '>' << b;
     });
 
     std::wstring in = argv[0];
     std::wstring out;
+
+    bool overwrite = false;
 
     if (argc == 1)
     {
@@ -42,24 +43,24 @@ int wmain (int argc, wchar_t** argv)
         wchar_t tmp[L_tmpnam_s];
         _wtmpnam_s(tmp);
         out = tmp;
-
         std::wcout << L"in:" << in << L"\nout:" << in << L'\n';
-        tuftmf::fix_file(in, out);
-
-        _wrename(out.c_str(), in.c_str());
+        overwrite = true;
     }
     else if (argc == 2)
     {
         out = argv[1];
-
         std::wcout << L"in:" << in << L"\nout:" << out << L'\n';
-        tuftmf::fix_file(in, out);
     }
     else
     {
         std::wcerr << L"Too many arguments";
         return -1;
     }
+
+    tuftmf::fix_file(in, out);
+
+    if (overwrite)
+        _wrename(out.c_str(), in.c_str());
 
 
     if (count > 0)
