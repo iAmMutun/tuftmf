@@ -2,11 +2,12 @@
 #include <fstream>
 #include <locale>
 #include <codecvt>
+#include <cstdint>
 
 namespace tuftmf
 {
 
-typedef wchar_t _Tchar;
+typedef uint16_t _Tchar;
 typedef std::char_traits<_Tchar> _Traits;
 
 class cvt_utf8 : public std::codecvt_utf8<_Tchar, 0x10ffff, std::consume_header>
