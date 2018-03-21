@@ -6,6 +6,14 @@
 namespace tuftmf
 {
 
+_Tcounter _null_counter = [] (uint16_t, uint16_t) {};
+_Tcounter _fix_counter  = _null_counter;
+
+void set_fix_counter(_Tcounter counter)
+{
+    _fix_counter = (counter ? counter : _null_counter);
+}
+
 uint16_t fix(uint16_t before, uint16_t current, uint16_t after)
 {
     if (is_floating_vowel(current))
@@ -84,6 +92,7 @@ void fix_file (const std::wstring& in, const std::wstring& out)
         {
             current = new_current;
             count++;
+            _fix_counter(current, new_current);
         }
 
         fsout.put(current);
