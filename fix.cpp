@@ -89,15 +89,6 @@ void fix_file (const std::wstring& in, const std::wstring& out)
 
         fsout.put(current);
 
-        if (is_digit(current))
-        {
-            if (is_argument(before) && is_argument(after))
-            {
-                count++;
-                fsout.put(argument_prefix());
-            }
-        }
-
         before = current;
         current = after;
     } // while
