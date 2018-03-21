@@ -129,13 +129,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="fix_file.cpp" />
+    <ClCompile Include="fix.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="functions.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="chars.h" />
-    <ClInclude Include="fix_file.h" />
+    <ClInclude Include="fix.h" />
     <ClInclude Include="functions.h" />
     <ClInclude Include="stream.hpp" />
   </ItemGroup>

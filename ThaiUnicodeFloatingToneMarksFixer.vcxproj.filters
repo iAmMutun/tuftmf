@@ -18,7 +18,7 @@
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="fix_file.cpp">
+    <ClCompile Include="fix.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="functions.cpp">
@@ -29,7 +29,7 @@
     <ClInclude Include="chars.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="fix_file.h">
+    <ClInclude Include="fix.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="functions.h">

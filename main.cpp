@@ -1,5 +1,5 @@
 #include <iostream>
-#include "fix_file.h"
+#include "fix.h"
 
 int wmain (int argc, wchar_t** argv)
 {
