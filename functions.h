@@ -21,8 +21,6 @@ bool is_lower_vowel (uint16_t c);
 
 bool is_lower_tail (uint16_t c);
 
-uint16_t argument_prefix ();
-
 uint16_t move_floating_left (uint16_t c);
 
 uint16_t move_tone_marker_low (uint16_t c);

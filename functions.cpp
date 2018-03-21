@@ -75,12 +75,6 @@ bool is_lower_tail (uint16_t c)
     return false;
 }
 
-uint16_t argument_prefix ()
-{
-    std::wcout << L'@';//<< std::showbase << std::hex << _zero_width_space;
-    return _zero_width_space;
-}
-
 void log_fix (uint16_t a, uint16_t b)
 {
     std::wcout << L'!';//<< std::showbase << std::hex << a << '>' << b;
