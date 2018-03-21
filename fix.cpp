@@ -8,12 +8,10 @@ namespace tuftmf
 
 uint16_t fix(uint16_t before, uint16_t current, uint16_t after)
 {
-    int count = 0;
     if (is_floating_vowel(current))
     {
         if (is_long_tail(before))
         {
-            count++;
             current = move_floating_left(current);
         }
     }
@@ -21,7 +19,6 @@ uint16_t fix(uint16_t before, uint16_t current, uint16_t after)
     {
         if (is_long_tail(before))
         {
-            count++;
             current = move_floating_left(current);
         }
     }
@@ -31,7 +28,6 @@ uint16_t fix(uint16_t before, uint16_t current, uint16_t after)
         {
             if (is_long_tail(before))
             {
-                count++;
                 current = move_tone_marker_left_height(current);
             }
         }
@@ -39,18 +35,15 @@ uint16_t fix(uint16_t before, uint16_t current, uint16_t after)
         {
             if (is_backward_floating_vowel(after))
             {
-                count++;
                 current = move_tone_marker_left_height(current);
             }
             else
             {
-                count++;
                 current = move_tone_marker_left_low(current);
             }
         }
         else if (!is_backward_floating_vowel(after))
         {
-            count++;
             current = move_tone_marker_low(current);
         }
     }
@@ -58,7 +51,6 @@ uint16_t fix(uint16_t before, uint16_t current, uint16_t after)
     {
         if (is_lower_vowel(after))
         {
-            count++;
             current = strip_lower_foot(current);
         }
     }
@@ -66,7 +58,6 @@ uint16_t fix(uint16_t before, uint16_t current, uint16_t after)
     {
         if (is_lower_tail(before))
         {
-            count++;
             current = move_lower_vowel_left(current);
         }
     }
