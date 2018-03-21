@@ -1,5 +1,5 @@
 #include "functions.h"
-#include "stream.hpp"
+#include "stream.h"
 #include "fix.h"
 
 namespace tuftmf

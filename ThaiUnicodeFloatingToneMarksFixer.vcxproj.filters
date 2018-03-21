@@ -35,7 +35,7 @@
     <ClInclude Include="functions.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="stream.hpp">
+    <ClInclude Include="stream.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
