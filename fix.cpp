@@ -73,8 +73,8 @@ uint16_t fix(uint16_t before, uint16_t current, uint16_t after)
 
 void fix_file (const std::wstring& in, const std::wstring& out)
 {
-    tuftmf::istream fsin(in);
-    tuftmf::ostream fsout(out);
+    tuftmf::ifstream fsin(in);
+    tuftmf::ofstream fsout(out);
 
     uint16_t before = L'\0';
     uint16_t current, after;
