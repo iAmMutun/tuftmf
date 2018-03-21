@@ -1,6 +1,5 @@
 #include <iostream>
-
-void fix_file(const std::wstring& in, const std::wstring& out);
+#include "fix_file.h"
 
 int wmain (int argc, wchar_t** argv)
 {

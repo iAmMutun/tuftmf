@@ -1,6 +1,7 @@
 #include <iostream>
 #include "functions.h"
 #include "stream.hpp"
+#include "fix_file.h"
 
 void fix_file (const std::wstring& in, const std::wstring& out)
 {

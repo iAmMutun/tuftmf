@@ -135,6 +135,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="chars.h" />
+    <ClInclude Include="fix_file.h" />
     <ClInclude Include="functions.h" />
     <ClInclude Include="stream.hpp" />
   </ItemGroup>
