@@ -6,13 +6,9 @@
 
 namespace tuftmf
 {
-
-typedef uint16_t _Tchar;
-typedef std::char_traits<_Tchar> _Traits;
-
-class cvt_utf8 : public std::codecvt_utf8<_Tchar, 0x10ffff, std::consume_header>
-{
-}; // class cvt_utf8
+using _Tchar   = uint16_t;
+using _Traits  = std::char_traits<_Tchar>;
+using cvt_utf8 = std::codecvt_utf8<_Tchar, 0x10ffff, std::consume_header>;
 
 class istream : public std::basic_ifstream<_Tchar, _Traits>
 {
