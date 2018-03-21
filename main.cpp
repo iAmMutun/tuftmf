@@ -35,14 +35,14 @@ int wmain (int argc, wchar_t** argv)
         _wtmpnam_s(tmp);
         out = tmp;
 
-        fix_file(in, out);
+        tuftmf::fix_file(in, out);
 
         _wrename(out.c_str(), in.c_str());
     }
     else if (argc == 2)
     {
         out = argv[1];
-        fix_file(in, out);
+        tuftmf::fix_file(in, out);
     }
     else
     {

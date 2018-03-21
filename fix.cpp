@@ -3,6 +3,9 @@
 #include "stream.hpp"
 #include "fix.h"
 
+namespace tuftmf
+{
+
 uint16_t fix(uint16_t before, uint16_t current, uint16_t after)
 {
         int count = 0;
@@ -112,3 +115,5 @@ void fix_file (const std::wstring& in, const std::wstring& out)
         std::wcout << L'\n';
     std::wcout << L"fixed:" << count << std::endl;
 }
+
+} // namespace tuftmf
