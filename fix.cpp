@@ -69,6 +69,8 @@ uint16_t fix(uint16_t before, uint16_t current, uint16_t after)
             new_current = move_lower_vowel_left(current);
         }
     }
+    if (current != new_current)
+        _fix_counter(current, new_current);
     return new_current;
 }
 
@@ -83,18 +85,8 @@ void fix_file (const std::wstring& in, const std::wstring& out)
     while (!fsin.eof())
     {
         fsin.get(after);
-
-        uint16_t new_current;
-        new_current = fix(before, current, after);
-
-        if (new_current != current)
-        {
-            current = new_current;
-            _fix_counter(current, new_current);
-        }
-
+        current = fix(before, current, after);
         fsout.put(current);
-
         before = current;
         current = after;
     } // while
