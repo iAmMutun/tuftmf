@@ -3,20 +3,9 @@
 #include "stream.hpp"
 #include "fix.h"
 
-void fix_file (const std::wstring& in, const std::wstring& out)
+uint16_t fix(uint16_t before, uint16_t current, uint16_t after)
 {
-    std::wcout << L"in:" << in << L"\nout:" << out << L'\n';
-    tuftmf::istream fsin(in);
-    tuftmf::ostream fsout(out);
-
-    int count = 0;
-    uint16_t before = L'\0';
-    uint16_t current, after;
-    fsin.get(current);
-    while (!fsin.eof())
-    {
-        fsin.get(after);
-
+        int count = 0;
         if (is_floating_vowel(current))
         {
             if (is_long_tail(before))
@@ -77,6 +66,31 @@ void fix_file (const std::wstring& in, const std::wstring& out)
                 count++;
                 current = move_lower_vowel_left(current);
             }
+        }
+        return current;
+}
+
+void fix_file (const std::wstring& in, const std::wstring& out)
+{
+    std::wcout << L"in:" << in << L"\nout:" << out << L'\n';
+    tuftmf::istream fsin(in);
+    tuftmf::ostream fsout(out);
+
+    int count = 0;
+    uint16_t before = L'\0';
+    uint16_t current, after;
+    fsin.get(current);
+    while (!fsin.eof())
+    {
+        fsin.get(after);
+
+        uint16_t new_current;
+        new_current = fix(before, current, after);
+
+        if (new_current != current)
+        {
+            current = new_current;
+            count++;
         }
 
         fsout.put(current);
