@@ -35,6 +35,7 @@ int wmain (int argc, wchar_t** argv)
         _wtmpnam_s(tmp);
         out = tmp;
 
+        std::wcout << L"in:" << in << L"\nout:" << in << L'\n';
         tuftmf::fix_file(in, out);
 
         _wrename(out.c_str(), in.c_str());
@@ -42,6 +43,8 @@ int wmain (int argc, wchar_t** argv)
     else if (argc == 2)
     {
         out = argv[1];
+
+        std::wcout << L"in:" << in << L"\nout:" << out << L'\n';
         tuftmf::fix_file(in, out);
     }
     else
