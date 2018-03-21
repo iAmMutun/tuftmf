@@ -1,6 +1,9 @@
 #pragma once
 #include <cstdint>
 
+namespace tuftmf
+{
+
 bool is_double_quote (uint16_t c);
 
 bool is_argument (uint16_t c);
@@ -32,3 +35,5 @@ uint16_t move_tone_marker_left_low (uint16_t c);
 uint16_t strip_lower_foot (uint16_t c);
 
 uint16_t move_lower_vowel_left (uint16_t c);
+
+} // namespace tuftmf

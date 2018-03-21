@@ -8,6 +8,9 @@
     if (A[i] == c) \
       return true;
 
+namespace tuftmf
+{
+
 bool is_double_quote (uint16_t c)
 {
     return c == _double_quote;
@@ -153,3 +156,5 @@ uint16_t move_lower_vowel_left (uint16_t c)
 {
     return fix_lower_vowel(c, _lower_vowels_left);
 }
+
+} // namespace tuftmf
