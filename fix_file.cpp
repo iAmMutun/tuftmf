@@ -10,8 +10,8 @@ void fix_file (const std::wstring& in, const std::wstring& out)
     tuftmf::ostream fsout(out);
 
     int count = 0;
-    char16_t before = L'\0';
-    char16_t current, after;
+    wchar_t before = L'\0';
+    wchar_t current, after;
     fsin.get(current);
     while (!fsin.eof())
     {
