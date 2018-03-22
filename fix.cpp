@@ -5,7 +5,7 @@
 namespace tuftmf
 {
 
-_Tcounter _null_counter = [] (_Tchar, _Tchar) {};
+_Tcounter _null_counter = [] (char_type, char_type) {};
 _Tcounter _fix_counter  = _null_counter;
 
 void set_fix_counter(_Tcounter counter)
@@ -13,7 +13,7 @@ void set_fix_counter(_Tcounter counter)
     _fix_counter = (counter ? counter : _null_counter);
 }
 
-_Tchar fix(_Tchar before, _Tchar current, _Tchar after)
+char_type fix(char_type before, char_type current, char_type after)
 {
     uint16_t new_current = current;
     if (is_floating_vowel(current))

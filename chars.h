@@ -4,18 +4,18 @@
 namespace tuftmf
 {
 
-const _Tchar _double_quote = L'\"';
+const char_type _double_quote = L'\"';
 
-const _Tchar _at_sign = L'@';
+const char_type _at_sign = L'@';
 
-const _Tchar _zero_width_space = L'\x200B';
+const char_type _zero_width_space = L'\x200B';
 
-const _Tchar _digits[] =
+const char_type _digits[] =
 {
     L'0', L'1', L'2', L'3', L'4', L'5', L'6', L'7', L'8', L'9'
 };
 
-const _Tchar _floating_vowels[] =
+const char_type _floating_vowels[] =
 {
     L'\x0E31', // ั
     L'\x0E34', // ิ
@@ -25,7 +25,7 @@ const _Tchar _floating_vowels[] =
     L'\x0E47', // ็
 };
 
-const _Tchar _floating_vowels_left[] =
+const char_type _floating_vowels_left[] =
 {
     L'\xF710', // ั
     L'\xF701', // ิ
@@ -35,19 +35,19 @@ const _Tchar _floating_vowels_left[] =
     L'\xF712', // ็
 };
 
-const _Tchar _backward_floating_vowels[] =
+const char_type _backward_floating_vowels[] =
 {
     L'\x0E33', // ำ
 };
 
-const _Tchar _sub_vowels[] =
+const char_type _sub_vowels[] =
 {
     L'\x0E38', // ุ
     L'\x0E39', // ู
     L'\x0E3A', // ฺ
 };
 
-const _Tchar _long_tail[] =
+const char_type _long_tail[] =
 {
     L'\x0E1B', // ป
     L'\x0E1D', // ฝ
@@ -55,7 +55,7 @@ const _Tchar _long_tail[] =
     L'\x0E2C', // ฬ
 };
 
-const _Tchar _tone_marker_high[] =
+const char_type _tone_marker_high[] =
 {
     L'\x0E48', // '
     L'\x0E49', // ้
@@ -64,7 +64,7 @@ const _Tchar _tone_marker_high[] =
     L'\x0E4C', // ์
 };
 
-const _Tchar _tone_marker_left_low[] =
+const char_type _tone_marker_left_low[] =
 {
     L'\xF705', // '
     L'\xF706', // ้
@@ -73,7 +73,7 @@ const _Tchar _tone_marker_left_low[] =
     L'\xF709', // ์
 };
 
-const _Tchar _tone_marker_low[] =
+const char_type _tone_marker_low[] =
 {
     L'\xF70A', // '
     L'\xF70B', // ้
@@ -82,7 +82,7 @@ const _Tchar _tone_marker_low[] =
     L'\xF70E', // ์
 };
 
-const _Tchar _tone_marker_left_high[] =
+const char_type _tone_marker_left_high[] =
 {
     L'\xF713', // '
     L'\xF714', // ้
@@ -91,33 +91,33 @@ const _Tchar _tone_marker_left_high[] =
     L'\xF717', // ์
 };
 
-const _Tchar _lower_foot[] =
+const char_type _lower_foot[] =
 {
     L'\x0E0D', // ญ
     L'\x0E10', // ฐ
 };
 
-const _Tchar _lower_foot_stripped[] =
+const char_type _lower_foot_stripped[] =
 {
     L'\xF70F', // ญ
     L'\xF700', // ฐ
 };
 
-const _Tchar _lower_vowels[] =
+const char_type _lower_vowels[] =
 {
     L'\x0E38', // ุ
     L'\x0E39', // ู
     L'\x0E3A', // ฺ
 };
 
-const _Tchar _lower_vowels_left[] =
+const char_type _lower_vowels_left[] =
 {
     L'\xF718', // ุ
     L'\xF719', // ู
     L'\xF71A', // ฺ
 };
 
-const _Tchar _lower_tail[] =
+const char_type _lower_tail[] =
 {
     L'\x0E0E', // ฎ
     L'\x0E0F', // ฏ

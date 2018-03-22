@@ -5,12 +5,12 @@
 namespace tuftmf
 {
 
-using _Tchar = uint16_t;
+using char_type = uint16_t;
 
-using _Tcounter = std::function<void(_Tchar, _Tchar)>;
+using _Tcounter = std::function<void(char_type, char_type)>;
 
 void set_fix_counter(_Tcounter counter);
 
-_Tchar fix(_Tchar before, _Tchar current, _Tchar after);
+char_type fix(char_type before, char_type current, char_type after);
 
 } // namespace tuftmf
