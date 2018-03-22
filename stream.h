@@ -10,7 +10,6 @@
 namespace tuftmf
 {
 
-using _Tchar    = uint16_t;
 using _Ttraits  = std::char_traits<_Tchar>;
 using _Tcvtutf8 = std::codecvt_utf8<_Tchar, 0x10ffff, std::consume_header>;
 

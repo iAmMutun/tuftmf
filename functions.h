@@ -1,39 +1,39 @@
 #pragma once
-#include <cstdint>
+#include "fix.h"
 
 namespace tuftmf
 {
 
-bool is_double_quote (uint16_t c);
+bool is_double_quote (_Tchar c);
 
-bool is_argument (uint16_t c);
+bool is_argument (_Tchar c);
 
-bool is_digit (uint16_t c);
+bool is_digit (_Tchar c);
 
-bool is_floating_vowel (uint16_t c);
+bool is_floating_vowel (_Tchar c);
 
-bool is_backward_floating_vowel (uint16_t c);
+bool is_backward_floating_vowel (_Tchar c);
 
-bool is_tone_marker (uint16_t c);
+bool is_tone_marker (_Tchar c);
 
-bool is_long_tail (uint16_t c);
+bool is_long_tail (_Tchar c);
 
-bool is_lower_foot (uint16_t c);
+bool is_lower_foot (_Tchar c);
 
-bool is_lower_vowel (uint16_t c);
+bool is_lower_vowel (_Tchar c);
 
-bool is_lower_tail (uint16_t c);
+bool is_lower_tail (_Tchar c);
 
-uint16_t move_floating_left (uint16_t c);
+_Tchar move_floating_left (_Tchar c);
 
-uint16_t move_tone_marker_low (uint16_t c);
+_Tchar move_tone_marker_low (_Tchar c);
 
-uint16_t move_tone_marker_left_height (uint16_t c);
+_Tchar move_tone_marker_left_height (_Tchar c);
 
-uint16_t move_tone_marker_left_low (uint16_t c);
+_Tchar move_tone_marker_left_low (_Tchar c);
 
-uint16_t strip_lower_foot (uint16_t c);
+_Tchar strip_lower_foot (_Tchar c);
 
-uint16_t move_lower_vowel_left (uint16_t c);
+_Tchar move_lower_vowel_left (_Tchar c);
 
 } // namespace tuftmf

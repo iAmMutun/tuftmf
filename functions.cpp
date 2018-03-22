@@ -10,36 +10,36 @@
 namespace tuftmf
 {
 
-bool is_double_quote (uint16_t c)
+bool is_double_quote (_Tchar c)
 {
     return c == _double_quote;
 }
 
-bool is_argument (uint16_t c)
+bool is_argument (_Tchar c)
 {
     return c == _at_sign;
 }
 
-bool is_digit (uint16_t c)
+bool is_digit (_Tchar c)
 {
     check_loop(_digits);
     return false;
 }
 
-bool is_floating_vowel (uint16_t c)
+bool is_floating_vowel (_Tchar c)
 {
     check_loop(_floating_vowels);
     check_loop(_floating_vowels_left);
     return false;
 }
 
-bool is_backward_floating_vowel (uint16_t c)
+bool is_backward_floating_vowel (_Tchar c)
 {
     check_loop(_backward_floating_vowels);
     return false;
 }
 
-bool is_tone_marker (uint16_t c)
+bool is_tone_marker (_Tchar c)
 {
     check_loop(_tone_marker_high);
     check_loop(_tone_marker_left_low);
@@ -48,7 +48,7 @@ bool is_tone_marker (uint16_t c)
     return false;
 }
 
-bool is_long_tail (uint16_t c)
+bool is_long_tail (_Tchar c)
 {
     check_loop(_long_tail);
     // include these as they're
@@ -59,25 +59,25 @@ bool is_long_tail (uint16_t c)
     return false;
 }
 
-bool is_lower_foot (uint16_t c)
+bool is_lower_foot (_Tchar c)
 {
     check_loop(_lower_foot);
     return false;
 }
 
-bool is_lower_vowel (uint16_t c)
+bool is_lower_vowel (_Tchar c)
 {
     check_loop(_lower_vowels);
     return false;
 }
 
-bool is_lower_tail (uint16_t c)
+bool is_lower_tail (_Tchar c)
 {
     check_loop(_lower_tail);
     return false;
 }
 
-uint16_t fix_floating_vowel (uint16_t c, const uint16_t *fix)
+_Tchar fix_floating_vowel (_Tchar c, const _Tchar *fix)
 {
     for (size_t i = 0; i < array_size(_floating_vowels); i++) {
         if (_floating_vowels[i] == c) {
@@ -87,7 +87,7 @@ uint16_t fix_floating_vowel (uint16_t c, const uint16_t *fix)
     return c;
 }
 
-uint16_t fix_tone_marker (uint16_t c, const uint16_t *fix)
+_Tchar fix_tone_marker (_Tchar c, const _Tchar *fix)
 {
     for (size_t i = 0; i < array_size(_tone_marker_high); i++) {
         if (_tone_marker_high[i] == c) {
@@ -97,7 +97,7 @@ uint16_t fix_tone_marker (uint16_t c, const uint16_t *fix)
     return c;
 }
 
-uint16_t fix_lower_foot (uint16_t c, const uint16_t *fix)
+_Tchar fix_lower_foot (_Tchar c, const _Tchar *fix)
 {
     for (size_t i = 0; i < array_size(_lower_foot); i++) {
         if (_lower_foot[i] == c) {
@@ -107,7 +107,7 @@ uint16_t fix_lower_foot (uint16_t c, const uint16_t *fix)
     return c;
 }
 
-uint16_t fix_lower_vowel (uint16_t c, const uint16_t *fix)
+_Tchar fix_lower_vowel (_Tchar c, const _Tchar *fix)
 {
     for (size_t i = 0; i < array_size(_lower_vowels); i++) {
         if (_lower_vowels[i] == c) {
@@ -117,32 +117,32 @@ uint16_t fix_lower_vowel (uint16_t c, const uint16_t *fix)
     return c;
 }
 
-uint16_t move_floating_left (uint16_t c)
+_Tchar move_floating_left (_Tchar c)
 {
     return fix_floating_vowel(c, _floating_vowels_left);
 }
 
-uint16_t move_tone_marker_low (uint16_t c)
+_Tchar move_tone_marker_low (_Tchar c)
 {
     return fix_tone_marker(c, _tone_marker_low);
 }
 
-uint16_t move_tone_marker_left_height (uint16_t c)
+_Tchar move_tone_marker_left_height (_Tchar c)
 {
     return fix_tone_marker(c, _tone_marker_left_high);
 }
 
-uint16_t move_tone_marker_left_low (uint16_t c)
+_Tchar move_tone_marker_left_low (_Tchar c)
 {
     return fix_tone_marker(c, _tone_marker_left_low);
 }
 
-uint16_t strip_lower_foot (uint16_t c)
+_Tchar strip_lower_foot (_Tchar c)
 {
     return fix_lower_foot(c, _lower_foot_stripped);
 }
 
-uint16_t move_lower_vowel_left (uint16_t c)
+_Tchar move_lower_vowel_left (_Tchar c)
 {
     return fix_lower_vowel(c, _lower_vowels_left);
 }

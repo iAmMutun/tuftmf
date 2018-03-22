@@ -1,15 +1,16 @@
 #pragma once
-#include <string>
 #include <cstdint>
 #include <functional>
 
 namespace tuftmf
 {
 
-using _Tcounter = std::function<void(uint16_t, uint16_t)>;
+using _Tchar = uint16_t;
+
+using _Tcounter = std::function<void(_Tchar, _Tchar)>;
 
 void set_fix_counter(_Tcounter counter);
 
-uint16_t fix(uint16_t before, uint16_t current, uint16_t after);
+_Tchar fix(_Tchar before, _Tchar current, _Tchar after);
 
 } // namespace tuftmf
