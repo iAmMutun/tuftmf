@@ -1,6 +1,5 @@
 #include "functions.h"
-#include "stream.h"
-#include "fix.h"
+#include "tuftmf.h"
 
 namespace tuftmf
 {
