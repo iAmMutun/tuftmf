@@ -5,10 +5,10 @@
 namespace tuftmf
 {
 
-_Tcounter _null_counter = [] (char_type, char_type) {};
-_Tcounter _fix_counter  = _null_counter;
+counter_type _null_counter = [] (char_type, char_type) {};
+counter_type _fix_counter  = _null_counter;
 
-void set_fix_counter(_Tcounter counter)
+void set_fix_counter(counter_type counter)
 {
     _fix_counter = (counter ? counter : _null_counter);
 }
