@@ -78,18 +78,7 @@ void fix_file (const std::wstring& in, const std::wstring& out)
 {
     tuftmf::ifstream fsin(in);
     tuftmf::ofstream fsout(out);
-
-    uint16_t before = L'\0';
-    uint16_t current, after;
-    fsin.get(current);
-    while (!fsin.eof())
-    {
-        fsin.get(after);
-        current = fix(before, current, after);
-        fsout.put(current);
-        before = current;
-        current = after;
-    } // while
+    fix(fsin, fsout);
 }
 
 } // namespace tuftmf

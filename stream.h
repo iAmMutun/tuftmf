@@ -5,34 +5,39 @@
 #include <codecvt>
 #include <cstdint>
 
+#include "fix.h"
+
 namespace tuftmf
 {
+
 using _Tchar    = uint16_t;
 using _Ttraits  = std::char_traits<_Tchar>;
-using _Tifbase  = std::basic_ifstream<_Tchar, _Ttraits>;
-using _Tofbase  = std::basic_ofstream<_Tchar, _Ttraits>;
 using _Tcvtutf8 = std::codecvt_utf8<_Tchar, 0x10ffff, std::consume_header>;
 
-class ifstream : public _Tifbase
-{
-public:
-    ifstream (const std::wstring &file)
-        : _Tifbase(file, std::ios::binary)
-    {
-        _Tcvtutf8 *cvt = new _Tcvtutf8;
-        imbue(std::locale(getloc(), cvt));
-    };
-}; // class istream
+using istream = std::basic_istream<_Tchar, _Ttraits>;
+using ostream = std::basic_ostream<_Tchar, _Ttraits>;
 
-class ofstream : public _Tofbase
+using ifstream = std::basic_ifstream<_Tchar, _Ttraits>;
+using ofstream = std::basic_ofstream<_Tchar, _Ttraits>;
+
+using istringstream = std::basic_istringstream<_Tchar, _Ttraits>;
+using ostringstream = std::basic_ostringstream<_Tchar, _Ttraits>;
+
+template<class _IStream, class _OStream>
+void fix(_IStream& is, _OStream& os)
 {
-public:
-    ofstream (const std::wstring &file)
-        : _Tofbase(file, std::ios::binary)
+    is.imbue(std::locale(is.getloc(), new _Tcvtutf8));
+    os.imbue(std::locale(os.getloc(), new _Tcvtutf8));
+    _Tchar before = L'\0', current, after;
+    is.get(current);
+    while (!is.eof())
     {
-        _Tcvtutf8 *cvt = new _Tcvtutf8;
-        imbue(std::locale(getloc(), cvt));
-    };
-}; // class ofstream
+        is.get(after);
+        current = fix(before, current, after);
+        os.put(current);
+        before = current;
+        current = after;
+    } // while
+}
 
 } // namespace tuftmf
