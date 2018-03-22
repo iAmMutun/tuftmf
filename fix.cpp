@@ -74,11 +74,4 @@ uint16_t fix(uint16_t before, uint16_t current, uint16_t after)
     return new_current;
 }
 
-void fix_file (const std::wstring& in, const std::wstring& out)
-{
-    tuftmf::ifstream fsin(in);
-    tuftmf::ofstream fsout(out);
-    fix(fsin, fsout);
-}
-
 } // namespace tuftmf

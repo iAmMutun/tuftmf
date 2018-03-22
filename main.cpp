@@ -1,5 +1,5 @@
 #include <iostream>
-#include "fix.h"
+#include "stream.h"
 
 int wmain (int argc, wchar_t** argv)
 {
@@ -57,7 +57,21 @@ int wmain (int argc, wchar_t** argv)
         return -1;
     }
 
-    tuftmf::fix_file(in, out);
+    tuftmf::ifstream fsin(in);
+    tuftmf::ofstream fsout(out);
+
+    if (fsin.fail())
+    {
+        std::wcerr << L"Error opening input file";
+        return -1;
+    }
+    if (fsout.fail())
+    {
+        std::wcerr << L"Error opening output file";
+        return -1;
+    }
+
+    tuftmf::fix(fsin, fsout);
 
     if (overwrite)
         _wrename(out.c_str(), in.c_str());
