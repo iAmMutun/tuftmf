@@ -1,5 +1,5 @@
 #include <iostream>
-#include "stream.h"
+#include "tuftmf/stream.h"
 
 int wmain (int argc, wchar_t** argv)
 {

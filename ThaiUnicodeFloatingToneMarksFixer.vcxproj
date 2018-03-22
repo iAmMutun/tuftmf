@@ -129,15 +129,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="tuftmf.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="functions.cpp" />
+    <ClCompile Include="tuftmf/tuftmf.cpp" />
+    <ClCompile Include="tuftmf/functions.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="chars.h" />
-    <ClInclude Include="tuftmf.h" />
-    <ClInclude Include="functions.h" />
-    <ClInclude Include="stream.h" />
+    <ClInclude Include="tuftmf/chars.h" />
+    <ClInclude Include="tuftmf/tuftmf.h" />
+    <ClInclude Include="tuftmf/functions.h" />
+    <ClInclude Include="tuftmf/stream.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
