@@ -6,10 +6,6 @@ namespace tuftmf
 
 const char_type _double_quote = L'\"';
 
-const char_type _at_sign = L'@';
-
-const char_type _zero_width_space = L'\x200B';
-
 const char_type _digits[] =
 {
     L'0', L'1', L'2', L'3', L'4', L'5', L'6', L'7', L'8', L'9'

@@ -6,8 +6,6 @@ namespace tuftmf
 
 bool is_double_quote (char_type c);
 
-bool is_argument (char_type c);
-
 bool is_digit (char_type c);
 
 bool is_floating_vowel (char_type c);

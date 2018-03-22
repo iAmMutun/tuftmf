@@ -15,11 +15,6 @@ bool is_double_quote (char_type c)
     return c == _double_quote;
 }
 
-bool is_argument (char_type c)
-{
-    return c == _at_sign;
-}
-
 bool is_digit (char_type c)
 {
     check_loop(_digits);
