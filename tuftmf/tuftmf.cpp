@@ -26,7 +26,7 @@ char_type fix(char_type previous2, char_type previous, char_type current, char_t
     {
         if (is_floating_vowel(previous))
         {
-            if (is_long_tail(previous))
+            if (is_long_tail(previous2))
             {
                 new_current = move_tone_marker_left_height(current);
             }
@@ -44,7 +44,14 @@ char_type fix(char_type previous2, char_type previous, char_type current, char_t
         }
         else if (!is_backward_floating_vowel(next))
         {
-            new_current = move_tone_marker_low(current);
+            if (is_long_tail(previous2))
+            {
+                new_current = move_tone_marker_left_low(current);
+            }
+            else
+            {
+                new_current = move_tone_marker_low(current);
+            }
         }
     }
     else if (is_lower_foot(current))
