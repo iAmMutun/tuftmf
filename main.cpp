@@ -57,8 +57,8 @@ int wmain (int argc, wchar_t** argv)
         return -1;
     }
 
-    tuftmf::ifstream fsin(in);
-    tuftmf::ofstream fsout(out);
+    tuftmf::ifstream fsin(in, std::ios::binary);
+    tuftmf::ofstream fsout(out, std::ios::binary);
 
     if (fsin.fail())
     {
