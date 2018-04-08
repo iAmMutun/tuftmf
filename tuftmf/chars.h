@@ -87,13 +87,13 @@ const char_type _tone_marker_left_high[] =
     L'\xF717', // ์
 };
 
-const char_type _lower_foot[] =
+const char_type _lower_base[] =
 {
     L'\x0E0D', // ญ
     L'\x0E10', // ฐ
 };
 
-const char_type _lower_foot_stripped[] =
+const char_type _lower_base_stripped[] =
 {
     L'\xF70F', // ญ
     L'\xF700', // ฐ

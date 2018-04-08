@@ -54,11 +54,11 @@ char_type fix(char_type previous2, char_type previous, char_type current, char_t
             }
         }
     }
-    else if (is_lower_foot(current))
+    else if (is_lower_base(current))
     {
         if (is_lower_vowel(next))
         {
-            new_current = strip_lower_foot(current);
+            new_current = strip_lower_base(current);
         }
     }
     else if (is_lower_vowel(current))

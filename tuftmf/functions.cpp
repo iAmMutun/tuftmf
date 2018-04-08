@@ -54,9 +54,9 @@ bool is_long_tail (char_type c)
     return false;
 }
 
-bool is_lower_foot (char_type c)
+bool is_lower_base (char_type c)
 {
-    check_loop(_lower_foot);
+    check_loop(_lower_base);
     return false;
 }
 
@@ -92,10 +92,10 @@ char_type fix_tone_marker (char_type c, const char_type *fix)
     return c;
 }
 
-char_type fix_lower_foot (char_type c, const char_type *fix)
+char_type fix_lower_base (char_type c, const char_type *fix)
 {
-    for (size_t i = 0; i < array_size(_lower_foot); i++) {
-        if (_lower_foot[i] == c) {
+    for (size_t i = 0; i < array_size(_lower_base); i++) {
+        if (_lower_base[i] == c) {
             return fix[i];
         }
     }
@@ -132,9 +132,9 @@ char_type move_tone_marker_left_low (char_type c)
     return fix_tone_marker(c, _tone_marker_left_low);
 }
 
-char_type strip_lower_foot (char_type c)
+char_type strip_lower_base (char_type c)
 {
-    return fix_lower_foot(c, _lower_foot_stripped);
+    return fix_lower_base(c, _lower_base_stripped);
 }
 
 char_type move_lower_vowel_left (char_type c)
