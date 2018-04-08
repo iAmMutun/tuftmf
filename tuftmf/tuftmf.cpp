@@ -22,13 +22,6 @@ char_type fix(char_type previous2, char_type previous, char_type current, char_t
             new_current = move_floating_left(current);
         }
     }
-    else if (is_floating_vowel(current))
-    {
-        if (is_long_tail(previous))
-        {
-            new_current = move_floating_left(current);
-        }
-    }
     else if (is_tone_marker(current))
     {
         if (is_floating_vowel(previous))
