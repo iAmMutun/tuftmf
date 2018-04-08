@@ -12,7 +12,7 @@ void set_fix_counter(counter_type counter)
     _fix_counter = (counter ? counter : _null_counter);
 }
 
-char_type fix(char_type previous, char_type current, char_type next)
+char_type fix(char_type previous2, char_type previous, char_type current, char_type next)
 {
     uint16_t new_current = current;
     if (is_floating_vowel(current))

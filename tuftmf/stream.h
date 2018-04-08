@@ -27,13 +27,14 @@ void fix(_IStream& is, _OStream& os)
         <char_type, 0x10ffff, std::consume_header>;
     is.imbue(std::locale(is.getloc(), new cvtutf8));
     os.imbue(std::locale(os.getloc(), new cvtutf8));
-    char_type previous = L'\0', current, next;
+    char_type previous2 = L'\0', previous = L'\0', current, next;
     is.get(current);
     while (!is.eof())
     {
         is.get(next);
-        current = fix(previous, current, next);
+        current = fix(previous2, previous, current, next);
         os.put(current);
+        previous2 = previous;
         previous = current;
         current = next;
     } // while
